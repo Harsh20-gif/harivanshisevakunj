@@ -1,0 +1,600 @@
+/* ============================================================
+   flowing-bg.css — Sacred Vrindavan Ambient Background & Motion
+   Public storefront dynamic fluid background, luminous orbs,
+   silky river waves, and floating temple diya sparkles.
+   ============================================================ */
+
+/* ── Public Flowing Background Shell ──────────────────────── */
+.public-bg-flowing {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    max-width: 100%;
+    height: 100vh;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 0;
+}
+
+/* Ensure foreground content stacks cleanly above background */
+.announcement-bar,
+.site-header,
+#main-content,
+.site-footer {
+    position: relative;
+    z-index: 1;
+}
+
+/* Ensure Floating WhatsApp stays fixed to bottom right corner */
+.floating-whatsapp {
+    position: fixed !important;
+    bottom: 24px !important;
+    right: 24px !important;
+    left: auto !important;
+    top: auto !important;
+    z-index: 9999 !important;
+}
+
+@media (max-width: 768px) {
+    .floating-whatsapp {
+        bottom: 18px !important;
+        right: 18px !important;
+    }
+}
+
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: var(--z-sticky);
+    background-color: rgba(255, 255, 255, 0.90);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    transition: background-color var(--transition-base), box-shadow var(--transition-base);
+}
+
+/* Layer 1: Slow-Flowing Base Gradient Mesh */
+.public-bg-flowing__mesh {
+    position: absolute;
+    inset: -20%;
+    width: 140%;
+    height: 140%;
+    background: radial-gradient(circle at 18% 25%, rgba(255, 217, 0, 0.16) 0%, transparent 48%),
+                radial-gradient(circle at 82% 75%, rgba(235, 195, 140, 0.22) 0%, transparent 52%),
+                radial-gradient(circle at 50% 45%, rgba(255, 245, 166, 0.16) 0%, transparent 55%),
+                radial-gradient(circle at 75% 20%, rgba(30, 112, 64, 0.06) 0%, transparent 42%),
+                linear-gradient(135deg, #FAF5E8 0%, #FFFDF5 32%, #F6ECE0 68%, #FAF5E8 100%);
+    background-size: 200% 200%;
+    animation: publicMeshFlow 28s ease-in-out infinite alternate;
+    will-change: transform, background-position;
+}
+
+@keyframes publicMeshFlow {
+    0% {
+        transform: translate3d(0, 0, 0) scale(1);
+        background-position: 0% 0%;
+    }
+    50% {
+        transform: translate3d(-3%, -2%, 0) scale(1.04);
+        background-position: 100% 50%;
+    }
+    100% {
+        transform: translate3d(2%, 3%, 0) scale(1.02);
+        background-position: 50% 100%;
+    }
+}
+
+/* Layer 2: Luminous Floating Organic Orbs */
+.public-bg-flowing__orb {
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+    will-change: transform;
+}
+
+/* Orb 1: Radharani Swarna Gold (Top Right) */
+.public-bg-flowing__orb--gold {
+    width: 600px;
+    height: 600px;
+    top: -120px;
+    right: -100px;
+    background: radial-gradient(circle, rgba(255, 217, 0, 0.28) 0%, rgba(229, 190, 0, 0.12) 45%, transparent 70%);
+    filter: blur(90px);
+    animation: publicOrbFloatGold 26s ease-in-out infinite alternate;
+}
+
+@keyframes publicOrbFloatGold {
+    0% {
+        transform: translate3d(0, 0, 0) scale(1);
+    }
+    33% {
+        transform: translate3d(-90px, 80px, 0) scale(1.12);
+    }
+    66% {
+        transform: translate3d(40px, 130px, 0) scale(0.94);
+    }
+    100% {
+        transform: translate3d(-30px, 60px, 0) scale(1.06);
+    }
+}
+
+/* Orb 2: Chandan Sandalwood (Bottom Left) */
+.public-bg-flowing__orb--sandalwood {
+    width: 640px;
+    height: 640px;
+    bottom: -140px;
+    left: -100px;
+    background: radial-gradient(circle, rgba(235, 195, 140, 0.32) 0%, rgba(240, 223, 192, 0.16) 45%, transparent 70%);
+    filter: blur(95px);
+    animation: publicOrbFloatSandalwood 32s ease-in-out infinite alternate;
+}
+
+@keyframes publicOrbFloatSandalwood {
+    0% {
+        transform: translate3d(0, 0, 0) scale(1);
+    }
+    40% {
+        transform: translate3d(110px, -80px, 0) scale(1.15);
+    }
+    75% {
+        transform: translate3d(50px, -40px, 0) scale(0.96);
+    }
+    100% {
+        transform: translate3d(90px, -100px, 0) scale(1.08);
+    }
+}
+
+/* Orb 3: Kadamba Sacred Emerald (Mid Right Whisper) */
+.public-bg-flowing__orb--kadamba {
+    width: 460px;
+    height: 460px;
+    top: 40%;
+    right: 10%;
+    background: radial-gradient(circle, rgba(30, 112, 64, 0.12) 0%, rgba(30, 112, 64, 0.03) 50%, transparent 70%);
+    filter: blur(85px);
+    animation: publicOrbFloatKadamba 38s ease-in-out infinite alternate;
+}
+
+@keyframes publicOrbFloatKadamba {
+    0% {
+        transform: translate3d(0, 0, 0) scale(0.92);
+        opacity: 0.6;
+    }
+    50% {
+        transform: translate3d(-70px, -90px, 0) scale(1.12);
+        opacity: 0.95;
+    }
+    100% {
+        transform: translate3d(35px, -45px, 0) scale(0.98);
+        opacity: 0.75;
+    }
+}
+
+/* Orb 4: Radiant Sunbeam (Mid Left) */
+.public-bg-flowing__orb--sunbeam {
+    width: 500px;
+    height: 500px;
+    top: 25%;
+    left: 18%;
+    background: radial-gradient(circle, rgba(255, 245, 166, 0.35) 0%, rgba(255, 217, 0, 0.12) 50%, transparent 72%);
+    filter: blur(80px);
+    animation: publicOrbFloatSunbeam 22s ease-in-out infinite alternate;
+}
+
+@keyframes publicOrbFloatSunbeam {
+    0% {
+        transform: translate3d(0, 0, 0) scale(1);
+    }
+    50% {
+        transform: translate3d(75px, 85px, 0) scale(1.10);
+    }
+    100% {
+        transform: translate3d(-25px, 50px, 0) scale(0.96);
+    }
+}
+
+/* Layer 3: Flowing Yamuna Silk Wave Ribbons */
+.public-bg-flowing__wave-svg {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60%;
+    min-height: 400px;
+    pointer-events: none;
+    will-change: transform;
+}
+
+.public-bg-flowing__wave-path {
+    transform-origin: center bottom;
+    will-change: transform;
+}
+
+.public-bg-flowing__wave-path--1 {
+    animation: publicWaveDrift1 24s ease-in-out infinite alternate;
+}
+
+@keyframes publicWaveDrift1 {
+    0% {
+        transform: translate3d(0, 0, 0) scaleY(1);
+    }
+    50% {
+        transform: translate3d(-45px, 16px, 0) scaleY(1.08);
+    }
+    100% {
+        transform: translate3d(35px, -10px, 0) scaleY(0.95);
+    }
+}
+
+.public-bg-flowing__wave-path--2 {
+    animation: publicWaveDrift2 30s ease-in-out infinite alternate;
+}
+
+@keyframes publicWaveDrift2 {
+    0% {
+        transform: translate3d(0, 0, 0) scaleY(1);
+    }
+    50% {
+        transform: translate3d(55px, -20px, 0) scaleY(1.10);
+    }
+    100% {
+        transform: translate3d(-40px, 12px, 0) scaleY(0.96);
+    }
+}
+
+.public-bg-flowing__wave-path--3 {
+    animation: publicWaveDrift3 36s ease-in-out infinite alternate;
+}
+
+@keyframes publicWaveDrift3 {
+    0% {
+        transform: translate3d(0, 0, 0) scaleY(1);
+    }
+    50% {
+        transform: translate3d(-35px, -12px, 0) scaleY(1.05);
+    }
+    100% {
+        transform: translate3d(45px, 18px, 0) scaleY(0.93);
+    }
+}
+
+/* Layer 4: Sacred Floating Diya Sparks / Golden Light Particles */
+.public-bg-flowing__sparkles {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.public-bg-flowing__sparkle {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #FFD900;
+    box-shadow: 0 0 8px #FFD900, 0 0 16px rgba(255, 217, 0, 0.6);
+    opacity: 0;
+    will-change: transform, opacity;
+}
+
+.public-bg-flowing__sparkle--1 {
+    left: 15%;
+    bottom: 5%;
+    animation: sparkleDrift1 18s ease-in-out infinite;
+}
+
+.public-bg-flowing__sparkle--2 {
+    left: 32%;
+    bottom: 12%;
+    width: 4px;
+    height: 4px;
+    animation: sparkleDrift2 24s ease-in-out infinite 3s;
+}
+
+.public-bg-flowing__sparkle--3 {
+    left: 55%;
+    bottom: 8%;
+    width: 6px;
+    height: 6px;
+    animation: sparkleDrift1 21s ease-in-out infinite 6s;
+}
+
+.public-bg-flowing__sparkle--4 {
+    left: 72%;
+    bottom: 15%;
+    width: 4px;
+    height: 4px;
+    animation: sparkleDrift2 26s ease-in-out infinite 2s;
+}
+
+.public-bg-flowing__sparkle--5 {
+    left: 88%;
+    bottom: 4%;
+    width: 5px;
+    height: 5px;
+    animation: sparkleDrift1 22s ease-in-out infinite 8s;
+}
+
+.public-bg-flowing__sparkle--6 {
+    left: 45%;
+    bottom: 2%;
+    width: 4px;
+    height: 4px;
+    animation: sparkleDrift2 28s ease-in-out infinite 10s;
+}
+
+@keyframes sparkleDrift1 {
+    0% {
+        transform: translate3d(0, 0, 0) scale(0.5);
+        opacity: 0;
+    }
+    20% {
+        opacity: 0.7;
+    }
+    50% {
+        transform: translate3d(40px, -350px, 0) scale(1.1);
+        opacity: 0.85;
+    }
+    80% {
+        opacity: 0.4;
+    }
+    100% {
+        transform: translate3d(-30px, -700px, 0) scale(0.4);
+        opacity: 0;
+    }
+}
+
+@keyframes sparkleDrift2 {
+    0% {
+        transform: translate3d(0, 0, 0) scale(0.4);
+        opacity: 0;
+    }
+    25% {
+        opacity: 0.65;
+    }
+    55% {
+        transform: translate3d(-35px, -380px, 0) scale(1);
+        opacity: 0.75;
+    }
+    85% {
+        opacity: 0.35;
+    }
+    100% {
+        transform: translate3d(25px, -720px, 0) scale(0.3);
+        opacity: 0;
+    }
+}
+
+/* ── Public Glassmorphic Card & Flourish Enhancements ─────── */
+.trust-strip {
+    background: rgba(245, 236, 224, 0.75);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-top: 1px solid rgba(240, 223, 192, 0.7);
+    border-bottom: 1px solid rgba(240, 223, 192, 0.7);
+}
+
+.product-card {
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--color-border);
+    transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base);
+}
+
+.product-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 32px rgba(61, 26, 6, 0.12), 0 0 18px rgba(255, 217, 0, 0.20);
+    border-color: rgba(255, 217, 0, 0.65);
+}
+
+.section-flourish {
+    display: inline-block;
+    filter: drop-shadow(0 0 4px rgba(255, 217, 0, 0.35));
+    animation: sacredFlourishBreathing 3.6s ease-in-out infinite;
+    transform-origin: center center;
+}
+
+@keyframes sacredFlourishBreathing {
+    0%, 100% {
+        transform: scale(1);
+        filter: drop-shadow(0 0 3px rgba(255, 217, 0, 0.3));
+    }
+    50% {
+        transform: scale(1.15) rotate(4deg);
+        filter: drop-shadow(0 0 8px rgba(255, 217, 0, 0.65));
+    }
+}
+
+/* Accessibility: Respect Reduced Motion Preference */
+@media (prefers-reduced-motion: reduce) {
+    .public-bg-flowing__mesh,
+    .public-bg-flowing__orb,
+    .public-bg-flowing__wave-path,
+    .public-bg-flowing__sparkle,
+    .section-flourish,
+    .page-loader__ring,
+    .page-loader__ring-inner,
+    .page-loader__emblem,
+    .page-loader__bar-fill {
+        animation: none !important;
+    }
+}
+
+/* ── Balanced Devotional Page Loader ─────────────────────────── */
+.page-loader {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(circle at center, rgba(254, 252, 247, 0.97) 0%, rgba(246, 238, 226, 0.99) 100%);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.38s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.38s cubic-bezier(0.4, 0, 0.2, 1);
+    pointer-events: auto;
+}
+
+.page-loader--hidden {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+}
+
+.page-loader__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 14px;
+    padding: 24px;
+    user-select: none;
+}
+
+.page-loader__ring-wrap {
+    position: relative;
+    width: 76px;
+    height: 76px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.page-loader__ring {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    border: 2px solid rgba(228, 168, 83, 0.22);
+    border-top-color: #d49a37;
+    border-right-color: #b8621b;
+    box-shadow: 0 0 16px rgba(212, 154, 55, 0.22);
+    animation: pageLoaderSpin 1.2s cubic-bezier(0.5, 0.1, 0.5, 0.9) infinite;
+}
+
+.page-loader__ring-inner {
+    position: absolute;
+    inset: 6px;
+    border-radius: 50%;
+    border: 1.5px dashed rgba(212, 154, 55, 0.45);
+    animation: pageLoaderSpinReverse 3.4s linear infinite;
+}
+
+.page-loader__emblem {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(circle, #fffdf8, #fdf6ea);
+    box-shadow: 0 4px 14px rgba(184, 98, 27, 0.16);
+    animation: pageLoaderPulse 2s ease-in-out infinite;
+    z-index: 2;
+}
+
+.page-loader__logo {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+    border-radius: 50%;
+}
+
+.page-loader__icon {
+    font-size: 20px;
+    line-height: 1;
+}
+
+.page-loader__caption {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+}
+
+.page-loader__mantra {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #78350f;
+    letter-spacing: 0.04em;
+    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
+}
+
+.page-loader__subtext {
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: #92400e;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    opacity: 0.82;
+}
+
+.page-loader__bar {
+    width: 110px;
+    height: 3px;
+    background: rgba(228, 168, 83, 0.22);
+    border-radius: 9999px;
+    overflow: hidden;
+    position: relative;
+    margin-top: 2px;
+}
+
+.page-loader__bar-fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 45%;
+    border-radius: 9999px;
+    background: linear-gradient(90deg, #d49a37, #b8621b, #f59e0b);
+    box-shadow: 0 0 8px rgba(212, 154, 55, 0.5);
+    animation: pageLoaderProgress 1.4s ease-in-out infinite;
+}
+
+@keyframes pageLoaderSpin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes pageLoaderSpinReverse {
+    0% {
+        transform: rotate(360deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes pageLoaderPulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.06);
+    }
+}
+
+@keyframes pageLoaderProgress {
+    0% {
+        left: -40%;
+        width: 40%;
+    }
+    50% {
+        width: 60%;
+    }
+    100% {
+        left: 100%;
+        width: 30%;
+    }
+}
+

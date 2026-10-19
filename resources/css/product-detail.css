@@ -1,0 +1,328 @@
+/* ============================================================
+   Product Detail & Breadcrumbs Styles
+   Harivanshi Seva Kunj — Production SEO & Storefront
+   ============================================================ */
+
+/* ── Breadcrumb Navigation ────────────────────────────────── */
+.breadcrumb-nav {
+    background-color: var(--color-surface-soft);
+    border-bottom: 1px solid var(--color-border);
+    padding: var(--space-2) 0;
+    font-size: var(--text-xs);
+}
+
+.breadcrumb-list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-1);
+    color: var(--color-text-muted);
+}
+
+.breadcrumb-item {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-1);
+}
+
+.breadcrumb-link {
+    color: var(--color-text-muted);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+}
+
+.breadcrumb-link:hover,
+.breadcrumb-link:focus-visible {
+    color: var(--color-heading);
+    text-decoration: underline;
+}
+
+.breadcrumb-sep {
+    color: var(--color-border);
+    font-size: 0.9em;
+}
+
+.breadcrumb-current {
+    color: var(--color-heading);
+    font-weight: var(--font-semibold);
+    max-width: 280px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* ── Product Detail Section ───────────────────────────────── */
+.product-detail-section {
+    padding: var(--space-8) 0;
+}
+
+.product-detail-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-6);
+    box-shadow: 0 4px 20px rgba(74, 38, 18, 0.05);
+}
+
+@media (min-width: 768px) {
+    .product-detail-layout {
+        grid-template-columns: 1fr 1.1fr;
+        padding: var(--space-8);
+        gap: var(--space-10);
+    }
+}
+
+/* ── Visual Gallery Column ────────────────────────────────── */
+.product-detail-gallery {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+}
+
+.product-detail-media-wrap {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    background: var(--color-surface-alt);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.product-detail-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform var(--transition-slow);
+}
+
+.product-detail-media-wrap:hover .product-detail-image {
+    transform: scale(1.03);
+}
+
+.product-detail-badge {
+    position: absolute;
+    top: var(--space-3);
+    left: var(--space-3);
+    background: var(--color-primary);
+    color: var(--color-secondary-dark);
+    font-size: var(--text-xs);
+    font-weight: var(--font-bold);
+    padding: 4px 10px;
+    border-radius: var(--radius-full);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+/* ── Product Info Column ──────────────────────────────────── */
+.product-detail-info {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+}
+
+.product-detail-category-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--color-surface-alt);
+    color: var(--color-secondary);
+    border: 1px solid var(--color-border);
+    padding: 4px 12px;
+    border-radius: var(--radius-full);
+    font-size: var(--text-xs);
+    font-weight: var(--font-semibold);
+    width: fit-content;
+    text-decoration: none;
+    transition: background var(--transition-fast), color var(--transition-fast);
+}
+
+.product-detail-category-tag:hover {
+    background: var(--color-primary-light);
+    color: var(--color-secondary-dark);
+}
+
+.product-detail-title {
+    font-family: var(--font-heading);
+    font-size: var(--text-2xl);
+    color: var(--color-heading);
+    line-height: var(--leading-tight);
+}
+
+@media (min-width: 768px) {
+    .product-detail-title {
+        font-size: var(--text-3xl);
+    }
+}
+
+.product-detail-pricing {
+    display: flex;
+    align-items: baseline;
+    gap: var(--space-3);
+    padding: var(--space-3) 0;
+    border-top: 1px dashed var(--color-border);
+    border-bottom: 1px dashed var(--color-border);
+}
+
+.product-detail-price {
+    font-size: var(--text-2xl);
+    font-weight: var(--font-bold);
+    color: var(--color-heading);
+}
+
+.product-detail-original-price {
+    font-size: var(--text-base);
+    color: var(--color-text-muted);
+    text-decoration: line-through;
+}
+
+.product-detail-stock-badge {
+    margin-left: auto;
+    font-size: var(--text-xs);
+    color: var(--color-accent-green);
+    background: #EAF7EE;
+    padding: 4px 10px;
+    border-radius: var(--radius-full);
+    font-weight: var(--font-semibold);
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.product-detail-description {
+    color: var(--color-text);
+    font-size: var(--text-sm);
+    line-height: var(--leading-relaxed);
+}
+
+.product-detail-description p + p {
+    margin-top: var(--space-2);
+}
+
+/* ── Purchasing Actions Block ─────────────────────────────── */
+.product-detail-actions {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    margin-top: var(--space-2);
+}
+
+.product-detail-form {
+    display: flex;
+    gap: var(--space-3);
+    align-items: center;
+}
+
+.product-detail-qty-wrap {
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    background: var(--color-surface);
+    overflow: hidden;
+}
+
+.product-detail-qty-btn {
+    width: 36px;
+    height: 44px;
+    background: var(--color-surface-soft);
+    color: var(--color-heading);
+    font-weight: var(--font-bold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background var(--transition-fast);
+}
+
+.product-detail-qty-btn:hover {
+    background: var(--color-primary-light);
+}
+
+.product-detail-qty-input {
+    width: 48px;
+    height: 44px;
+    border: none;
+    text-align: center;
+    font-weight: var(--font-bold);
+    color: var(--color-heading);
+    font-size: var(--text-base);
+}
+
+.product-detail-btn-cart {
+    flex: 1;
+    height: 44px;
+    background: var(--color-primary);
+    color: var(--color-secondary-dark);
+    font-weight: var(--font-bold);
+    border-radius: var(--radius-md);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+    box-shadow: 0 2px 6px rgba(255, 217, 0, 0.4);
+    transition: background var(--transition-fast), transform var(--transition-fast);
+}
+
+.product-detail-btn-cart:hover {
+    background: var(--color-primary-dark);
+    transform: translateY(-1px);
+}
+
+.product-detail-btn-whatsapp {
+    height: 44px;
+    background: #25D366;
+    color: #FFFFFF;
+    font-weight: var(--font-bold);
+    border-radius: var(--radius-md);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+    text-decoration: none;
+    box-shadow: 0 2px 6px rgba(37, 211, 102, 0.3);
+    transition: background var(--transition-fast), transform var(--transition-fast);
+}
+
+.product-detail-btn-whatsapp:hover {
+    background: #1EBE5D;
+    color: #FFFFFF;
+    transform: translateY(-1px);
+}
+
+/* ── Trust Grid on Detail Page ────────────────────────────── */
+.product-detail-trust {
+    margin-top: var(--space-4);
+    padding-top: var(--space-4);
+    border-top: 1px solid var(--color-border);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-3);
+}
+
+.product-trust-item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-size: var(--text-xs);
+    color: var(--color-text-muted);
+}
+
+.product-trust-icon {
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+/* ── Related Products Section ─────────────────────────────── */
+.related-products-section {
+    padding: var(--space-8) 0;
+    border-top: 1px solid var(--color-border);
+    margin-top: var(--space-8);
+}

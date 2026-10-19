@@ -1,0 +1,430 @@
+/* ============================================================
+   about.css — About Us Page Stylesheet
+   Harivanshi Seva Kunj — Strictly references theme.css tokens
+   ============================================================ */
+
+/* ── Hero Section ─────────────────────────────────────────── */
+.about-hero {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.85) 0%, rgba(250, 245, 232, 0.4) 100%);
+    padding-block: var(--space-6) var(--space-8);
+    border-bottom: 1px solid var(--color-border);
+    position: relative;
+    overflow: hidden;
+}
+
+.about-hero__inner {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: var(--space-6);
+    align-items: center;
+}
+
+.about-hero__greeting {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    background: rgba(var(--color-primary-rgb), 0.16);
+    color: var(--color-secondary-dark);
+    border: 1px solid rgba(var(--color-primary-rgb), 0.6);
+    border-radius: var(--radius-pill);
+    padding: 6px 18px;
+    font-size: var(--text-sm);
+    font-weight: var(--font-semibold);
+    letter-spacing: 0.05em;
+    margin-bottom: var(--space-4);
+}
+
+.about-hero__title {
+    font-family: var(--font-heading);
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    color: var(--color-heading);
+    line-height: var(--leading-tight);
+    margin-bottom: var(--space-3);
+    font-weight: var(--font-bold);
+}
+
+.about-hero__accent {
+    color: var(--color-secondary-light);
+}
+
+.about-hero__tagline {
+    font-family: var(--font-heading);
+    font-size: clamp(1.1rem, 1.8vw, 1.35rem);
+    color: var(--color-secondary);
+    font-style: italic;
+    margin-bottom: var(--space-3);
+}
+
+.about-hero__business-meta {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    flex-wrap: wrap;
+    margin-bottom: var(--space-4);
+}
+
+.about-hero__proprietor-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(var(--color-primary-rgb), 0.14);
+    border: 1px solid rgba(var(--color-primary-rgb), 0.45);
+    border-radius: var(--radius-pill);
+    padding: 4px 14px;
+    font-size: var(--text-sm);
+    color: var(--color-secondary-dark);
+}
+
+.about-hero__proprietor-icon {
+    font-size: 0.95rem;
+    line-height: 1;
+}
+
+.about-hero__proprietor-label {
+    color: var(--color-text);
+    font-weight: var(--font-medium);
+}
+
+.about-hero__proprietor-name {
+    color: var(--color-secondary-dark);
+    font-weight: var(--font-bold);
+}
+
+.about-hero__location-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    font-weight: var(--font-medium);
+}
+
+.about-hero__text {
+    font-size: var(--text-base);
+    color: var(--color-text);
+    line-height: var(--leading-relaxed);
+    margin-bottom: var(--space-4);
+    max-width: 58ch;
+}
+
+.about-hero__actions {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+    flex-wrap: wrap;
+}
+
+/* Hero Devotional Image Card */
+.about-hero__visual {
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.about-hero__frame {
+    background: var(--color-surface);
+    border: 2px solid var(--color-border);
+    border-radius: var(--radius-card);
+    padding: var(--space-3);
+    box-shadow: 0 10px 30px rgba(61, 26, 6, 0.08);
+    position: relative;
+    max-width: 440px;
+    width: 100%;
+}
+
+.about-hero__frame::before {
+    content: '';
+    position: absolute;
+    inset: -6px;
+    border: 1px dashed var(--color-primary);
+    border-radius: calc(var(--radius-card) + 6px);
+    pointer-events: none;
+    opacity: 0.7;
+}
+
+.about-hero__image {
+    width: 100%;
+    height: auto;
+    max-height: 320px;
+    object-fit: cover;
+    border-radius: calc(var(--radius-card) - 4px);
+    display: block;
+}
+
+.about-hero__caption {
+    margin-top: var(--space-3);
+    text-align: center;
+    font-family: var(--font-heading);
+    font-size: var(--text-sm);
+    color: var(--color-secondary);
+    font-weight: var(--font-medium);
+}
+
+/* ── Our Purpose Section ──────────────────────────────────── */
+.about-purpose {
+    padding-block: var(--space-8);
+    background: transparent;
+}
+
+.about-purpose__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-4);
+    margin-top: var(--space-5);
+}
+
+.purpose-card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-card);
+    padding: var(--space-5) var(--space-4);
+    text-align: center;
+    box-shadow: var(--shadow-sm);
+    transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base);
+}
+
+.purpose-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-card);
+    border-color: var(--color-primary);
+}
+
+.purpose-card__icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: var(--color-surface-alt);
+    border: 1.5px solid var(--color-border);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.85rem;
+    margin-bottom: var(--space-4);
+    box-shadow: inset 0 2px 4px rgba(61, 26, 6, 0.04);
+}
+
+.purpose-card__title {
+    font-family: var(--font-heading);
+    font-size: var(--text-xl);
+    color: var(--color-heading);
+    margin-bottom: var(--space-3);
+    font-weight: var(--font-bold);
+}
+
+.purpose-card__body {
+    font-size: var(--text-sm);
+    color: var(--color-text);
+    line-height: var(--leading-normal);
+}
+
+/* ── Our Seva (Categories Showcase) ───────────────────────── */
+.about-seva {
+    padding-block: var(--space-8);
+    background: var(--color-surface);
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.about-seva__list {
+    margin-top: var(--space-5);
+    margin-bottom: var(--space-5);
+}
+
+.about-seva__footer {
+    text-align: center;
+    margin-top: var(--space-4);
+}
+
+/* ── Instagram Community Section ──────────────────────────── */
+.about-instagram {
+    padding-block: var(--space-8);
+    background: transparent;
+}
+
+.instagram-card {
+    max-width: 640px;
+    margin-inline: auto;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 8px 30px rgba(61, 26, 6, 0.07);
+    padding: var(--space-6) var(--space-8);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.instagram-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: linear-gradient(90deg, #F58529, #DD2A7B, #8134AF);
+}
+
+.instagram-card__icon-wrap {
+    width: 68px;
+    height: 68px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #FFF0E6 0%, #FFE6F2 50%, #F3E6FF 100%);
+    border: 1.5px solid rgba(221, 42, 123, 0.3);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: var(--space-4);
+    color: #DD2A7B;
+}
+
+.instagram-card__handle {
+    font-family: var(--font-body);
+    font-size: var(--text-2xl);
+    font-weight: var(--font-bold);
+    color: var(--color-heading);
+    margin-bottom: var(--space-2);
+}
+
+.instagram-card__stat-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    background: var(--color-surface-alt);
+    border: 1px solid var(--color-border);
+    color: var(--color-secondary);
+    padding: 6px 16px;
+    border-radius: var(--radius-pill);
+    font-size: var(--text-sm);
+    font-weight: var(--font-semibold);
+    margin-bottom: var(--space-4);
+}
+
+.instagram-card__body {
+    font-size: var(--text-sm);
+    color: var(--color-text);
+    line-height: var(--leading-normal);
+    max-width: 48ch;
+    margin-inline: auto;
+    margin-bottom: var(--space-4);
+}
+
+.btn-instagram {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-3);
+    background: linear-gradient(135deg, #DD2A7B 0%, #8134AF 100%);
+    color: var(--color-white);
+    padding: var(--space-3) var(--space-8);
+    border-radius: var(--radius-pill);
+    font-weight: var(--font-semibold);
+    font-size: var(--text-base);
+    box-shadow: 0 4px 14px rgba(221, 42, 123, 0.35);
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast), filter var(--transition-fast);
+}
+
+.btn-instagram:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(221, 42, 123, 0.45);
+    filter: brightness(1.06);
+    color: var(--color-white);
+}
+
+.instagram-card__disclaimer {
+    margin-top: var(--space-4);
+    font-size: var(--text-xs);
+    color: var(--color-text-muted);
+}
+
+/* ── Contact Bridge Strip ─────────────────────────────────── */
+.about-bridge {
+    padding-block: var(--space-6);
+    background: var(--color-surface);
+    border-top: 1px solid var(--color-border);
+}
+
+.about-bridge__card {
+    background: linear-gradient(135deg, var(--color-surface-alt) 0%, var(--color-surface) 100%);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-card);
+    padding: var(--space-5);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-4);
+    flex-wrap: wrap;
+}
+
+.about-bridge__content h3 {
+    font-family: var(--font-heading);
+    font-size: var(--text-2xl);
+    color: var(--color-heading);
+    margin-bottom: var(--space-2);
+}
+
+.about-bridge__content p {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+}
+
+.about-bridge__actions {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    flex-wrap: wrap;
+}
+
+/* ── Responsive Queries ───────────────────────────────────── */
+@media (max-width: 992px) {
+    .about-hero__inner {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .about-hero__text {
+        margin-inline: auto;
+    }
+
+    .about-hero__actions {
+        justify-content: center;
+    }
+
+    .about-purpose__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 640px) {
+    .about-hero {
+        padding-block: var(--space-4);
+    }
+
+    .about-purpose {
+        padding-block: var(--space-5);
+    }
+
+    .about-purpose__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-seva {
+        padding-block: var(--space-5);
+    }
+
+    .about-instagram {
+        padding-block: var(--space-5);
+    }
+
+    .instagram-card {
+        padding: var(--space-6) var(--space-4);
+    }
+
+    .about-bridge__card {
+        text-align: center;
+        justify-content: center;
+    }
+
+    .about-bridge__actions {
+        justify-content: center;
+        width: 100%;
+    }
+}
